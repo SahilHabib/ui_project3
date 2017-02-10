@@ -1,0 +1,53 @@
+CREATE TABLE `cubicdb`.`teacher` (
+  `teacherid` INT NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(45) NOT NULL,
+  `lastName` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(45) NULL,
+  `contactNumber` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  PRIMARY KEY (`teacherid`),
+  UNIQUE INDEX `teacherid_UNIQUE` (`teacherid` ASC));
+
+CREATE TABLE `cubicdb`.`class` (
+  `classid` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `capacity` VARCHAR(45) NULL,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`classid`),
+  UNIQUE INDEX `classid_UNIQUE` (`classid` ASC));
+
+CREATE TABLE `cubicdb`.`class` (
+  `classid` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `capacity` VARCHAR(45) NULL,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`classid`),
+  UNIQUE INDEX `classid_UNIQUE` (`classid` ASC));
+
+CREATE TABLE `cubicdb`.`class` (
+  `classid` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `capacity` VARCHAR(45) NULL,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`classid`),
+  UNIQUE INDEX `classid_UNIQUE` (`classid` ASC));
+  
+  CREATE TABLE `cubicdb`.`batch` (
+  `batchid` INT NOT NULL AUTO_INCREMENT,
+  `sessionid` INT NOT NULL,
+  `studentid` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`batchid`, `sessionid`, `studentid`),
+  UNIQUE INDEX `batchid_UNIQUE` (`batchid` ASC),
+  UNIQUE INDEX `sessionid_UNIQUE` (`sessionid` ASC),
+  UNIQUE INDEX `studentid_UNIQUE` (`studentid` ASC),
+  CONSTRAINT `sessionid`
+    FOREIGN KEY (`sessionid`)
+    REFERENCES `cubicdb`.`session` (`sessionid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `studentid`
+    FOREIGN KEY (`studentid`)
+    REFERENCES `cubicdb`.`student` (`firstName`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
