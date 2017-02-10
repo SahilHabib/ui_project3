@@ -1,0 +1,34 @@
+<table class="table" id="resultTbl">
+                <caption> 
+                    <input style="float:right;margin-right:20px"
+                           type="text" ng-model="searchMd"
+                           placeholder="Search me...">
+             "People who are crazy enough to think they can change the world are the ones who do." - Steve Jobs         
+              
+        </caption>
+                <thead>
+                    <tr>
+                    <th> Student#</th>
+                    <th> First Name</th>
+                    <th> Last Name</th>        
+                    <th> Address</th>
+                    <th> Contact#</th>
+                    <th> Email</th>
+                    <th> SSN#</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                    <tr ng-repeat="x in cubicDatabase|filter:(searchMd)|orderBy:['lastName','firstName']:true">
+            <td>{{x.studentid}}</td>
+            <td>{{x.firstName}}</td>
+            <td>{{x.lastName}}</td>
+            <td>{{x.address}}</td>
+            <td>{{x.contactid}}</td>
+            <td>{{x.email}}</td>  
+            <td>{{x.socialSN}}</td>
+                        <td><button style="float:right;margin-right:20px" class="btn btn-primary" ng-click="update(x.studentid)">update
+            </button>
+            <button style="float:right;margin-right:20px" class="btn btn-danger"ng-click="delete(x.studentid)">delete
+            </button>  </td>
+            </tr>      
+</table>

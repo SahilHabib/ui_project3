@@ -1,0 +1,22 @@
+<table class="table" id="resultTbl">
+                <caption> Results of new entries
+    
+                </caption>
+                <thead>
+                    <tr>
+                    <th> Batch#</th>
+                    <th> Session#</th>
+                    <th> Student#</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                <tr ng-repeat="x in batchDatabase|filter:(searchMd)|orderBy:['batchid','studentid']:true">
+            <td>{{x.batchid}}</td>
+            <td>{{x.sessionid}}</td>
+            <td>{{x.studentid}}</td>
+                        <td><button style="float:right;margin-right:20px" class="btn btn-primary" ng-click="update(x.batchid)">update
+            </button>
+            <button style="float:right;margin-right:20px" class="btn btn-danger"ng-click="delete(x.batchid)">delete
+            </button>  </td>
+            </tr>  
+                </table>

@@ -1,0 +1,18 @@
+<form class="form-group">
+                
+                <div class="row">
+                <div class="col-md-2"> Session# </div>
+                <select class="form-control" ng-options="item as item.title for item in classList track by item.classid" ng-model="formModels.classid">
+            </select>
+            </div>
+            
+                <div class="row">
+                <div class="col-md-2"> Student# </div>
+                <select class="form-control" ng-options="item as item.title for item in classList track by item.classid" ng-model="formModels.classid">
+            </select>  
+            </div>        
+            
+                
+            <button class="btn btn-success" ng-click="add()"> ADD </button>
+        </form> 
+                

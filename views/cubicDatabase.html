@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Cubic Database </title>    
+        <link rel="stylesheet" href="/node_modules/jquery-ui-dist/jquery-ui.css">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">     
+    </head>
+    <body ng-app="appName">
+        <h1> CUBIC TECHNOLOGIES </h1>
+        <div id="tabs">
+      <ul>
+        <li><a href="#tabs-0">Home</a></li>
+        <li><a href="#tabs-1">Student</a></li>
+        <li><a href="#tabs-2">Teacher</a></li>
+        <li><a href="#tabs-3">Class</a></li> 
+        <li><a href="#tabs-4">Session</a></li> 
+        <li><a href="#tabs-5">Batch</a></li> 
+      </ul>      
+    <div id="tabs-0">
+        <h2>Conquering one at a time...</h2>
+      <picture>
+            <source srcset=http://bit.ly/2buImj4 media="(max-width: 800px)" >
+            <source srcset=http://bit.ly/2b65YLu media="(min-width: 900px)" >           
+            <img src=http://bit.ly/2buImj4 alt="World Map">         
+      </picture>  
+    </div>    
+<div id="tabs-1"> 
+        <div>
+        <h1> Enter Student Record </h1>
+              <student-form></student-form> 
+              <student-table updateId="0"></student-table>        
+</div>
+</div>
+  <div id="tabs-2">
+      <div ng-controller="teacherCtrl">
+        <h1> Enter Teacher Record </h1>
+            <teacher-form></teacher-form>
+            <teacher-table updateId="0"></teacher-table>  
+  </div>
+</div>
+  <div id="tabs-3">
+ <div ng-controller="programCtrl">     
+        <h1> Enter Program Info </h1>            
+              <program-form></program-form>  
+              <program-table updateId="0"></program-table>    
+    </div>
+</div>
+    <div id="tabs-4">
+<div ng-controller="sessionCtrl">       
+        <h1> Enter Session Info </h1>
+            <session-form></session-form>          
+            <session-table updateId="0"></session-table>    
+</div>
+</div>
+    <div id="tabs-5">
+<div ng-controller="batchCtrl">
+        <h1> Enter Batch info </h1>
+            <batch-form></batch-form>
+            <batch-table updateId="0"></batch-table>
+    </div>
+</div>
+    </div>
+    </body>
+        <script type="text/javascript"
+        src="/node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="/node_modules/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="/node_modules/jquery-ui-dist/jquery-ui.js"></script>
+        <script type="text/javascript" src="/scripts/app.js">
+        </script>
+        <script type="text/javascript" src="/scripts/services/PersonFactory.js"></script>
+        <script type="text/javascript" src="/scripts/services/personHttp.js"></script>
+        <script type="text/javascript" src="/scripts/services/classHttp.js">
+        </script>
+        <script type="text/javascript" src="/scripts/services/sessionHttp.js"></script>
+        <script type="text/javascript" src="/scripts/services/batchHttp.js">
+        </script>
+        <script type="text/javascript" src="/scripts/services/teacherHttp.js"></script>
+        <script type="text/javascript" src="/scripts/cubicDatabase.js">
+        </script>
+        <script type="text/javascript" src="/scripts/controllers/cubicDatabaseCtrl.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/teacherCtrl.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/programCtrl.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/sessionCtrl.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/batchCtrl.js"></script>
+        <script type="text/javascript" src="/scripts/directives/cubicDatabaseForm.js"></script>
+        <script type="text/javascript" src="/scripts/directives/teacherForm.js"></script>
+        <script type="text/javascript" src="/scripts/directives/programForm.js"></script>
+        <script type="text/javascript" src="/scripts/directives/sessionForm.js"></script>
+        <script type="text/javascript" src="/scripts/directives/batchForm.js"></script>
+        <script type="text/javascript" src="/scripts/directives/studentTable.js"></script>
+        <script type="text/javascript" src="/scripts/directives/teacherTable.js"></script>
+        <script type="text/javascript" src="/scripts/directives/programTable.js"></script>
+        <script type="text/javascript" src="/scripts/directives/sessionTable.js"></script>
+        <script type="text/javascript" src="/scripts/directives/batchTable.js"></script>      
+</html>

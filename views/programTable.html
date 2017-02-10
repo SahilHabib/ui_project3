@@ -1,0 +1,27 @@
+<table class="table" id="resultTbl">
+                <caption> 
+                    <input style="float:right;margin-right:20px"
+                           type="text" ng-model="searchMd"
+                           placeholder="Search me...">
+                </caption>
+                <thead>
+                    <tr>
+                    <th> Class#</th>
+                    <th> Title</th>
+                    <th> Capacity</th>
+                    <th> Description</th>
+                    <th></th>
+                    </tr>
+                    
+                </thead>
+    <tr ng-repeat="x in programDatabase|filter:(searchMd)|orderBy:['title','capacity']:true">
+            <td>{{x.classid}}</td>
+            <td>{{x.title}}</td>
+            <td>{{x.capacity}}</td>
+            <td>{{x.description}}</td>
+                        <td><button style="float:right;margin-right:20px" class="btn btn-primary" ng-click="update(x.classid)">update
+            </button>
+            <button style="float:right;margin-right:20px" class="btn btn-danger"ng-click="delete(x.classid)">delete
+            </button>  </td>
+            </tr>         
+        </table>

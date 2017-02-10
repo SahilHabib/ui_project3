@@ -1,0 +1,30 @@
+<table class="table" id="resultTbl">
+                <caption> Results of new entries
+    
+                </caption>
+                <thead>
+                    <tr>
+                    <th> Session#</th>
+                    <th> Start Date</th>
+                    <th> End Date</th>
+                    <th> Start Time</th>
+                    <th> Class#</th>
+                    <th> Teacher#</th>
+                    <th> Session Title</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="x in sessionDatabase|filter:(searchMd)|orderBy:['startDate','endDate']:true">
+            <td>{{x.sessionid}}</td>
+            <td>{{x.startDate}}</td>
+            <td>{{x.endDate}}</td>
+            <td>{{x.startTime}}</td>
+            <td>{{x.classid}}</td>
+            <td>{{x.teacherid}}</td>  
+            <td>{{x.sessionTitle}}</td>
+                        <td><button style="float:right;margin-right:20px" class="btn btn-primary" ng-click="update(x.sessionid)">update
+            </button>
+            <button style="float:right;margin-right:20px" class="btn btn-danger"ng-click="delete(x.sessionid)">delete
+            </button>  </td>
+            </tr>      
+</table>
